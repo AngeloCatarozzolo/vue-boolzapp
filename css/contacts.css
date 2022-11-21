@@ -1,0 +1,19 @@
+.contacts-list {
+    list-style: none;
+}
+.contacts-list li {
+    display: flex;
+    margin: 10px 15px;
+    cursor: pointer;
+}
+.contacts-list li p {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.fas {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #B1B1B1;
+    cursor: pointer;
+}

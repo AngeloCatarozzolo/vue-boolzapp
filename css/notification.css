@@ -1,0 +1,22 @@
+.notifications {
+    background-color: cyan;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.notifications div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+.notifications i {
+    color: cyan;
+    cursor: pointer;
+}

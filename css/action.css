@@ -1,0 +1,25 @@
+.user-actions, .contact-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: #EBEAEA;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.actions .profile-pic {
+    margin: 0 10px;
+}
+
+.actions .username {
+    font-size: 1.125rem;
+}
+
+.actions .last-access {
+    font-size: 1.125rem;
+}
