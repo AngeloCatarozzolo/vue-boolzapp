@@ -2,6 +2,7 @@
     background-color: cyan;
     padding: 15px 10px;
     display: flex;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -12,11 +13,21 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    margin-right: 10px;
     background-color: #fff;
 }
 
 .notifications i {
     color: cyan;
+    cursor: pointer;
+}
+
+.active-notifications {
+    font-size: 18px;
+}
+
+.desktop-notifications {
+    font-size: 14px;
+    color: #4F7485;
+    text-decoration: underline;
     cursor: pointer;
 }

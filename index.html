@@ -34,34 +34,35 @@
                         <i class="fas fa-bell-slash"></i>
                     </div>
                     <div>
-                        <p class="">Ricevi notifiche di nuovi messaggi</p>
-                        <p class="">Attiva notifiche desktop</p>
+                        <p class="active-notifications">Ricevi notifiche di nuovi messaggi</p>
+                        <p class="desktop-notifications">Attiva notifiche desktop</p>
                     </div>
                 </div>
                 <!-- Sezione input ricerca contatto -->
                 <div class="search-contact">
-                    <input placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="researchContact" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- Sezione contatti utente -->
-                
-                <!-- <ul class="contacts-list"> -->
-                    <!-- <li v-for="(contact, i) in contacts" @click="showContactChat(i)"> -->
+                <ul class="contacts-list">
+                    <li v-for="(contact, i) in contacts" @click="showContactChat(i)">
                         <!-- <img :src="`img/avatar${contact.avatar}.jpg`" alt=""> -->
                         <!-- <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> -->
-                        <!-- <img class="profile-pic" :src="getImageUrl(contact)" alt=""> -->
-                    <!-- </li>-->
-                <!-- </ul> -->
-            
+                        <div class="contacts" v-if="contact.name.toLowerCase().includes(researchContact)">
+                            <img class="profile-pic" :src="getImageUrl(contact)" alt="">
+                            <p>{{contact.name}}</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <!-- Container del la chat con interlocutore -->
+            <!-- Container della chat con interlocutore -->
             <div class="main-container">
                 <!-- Sezione azioni interlocutore-->
                 <div class="contact-actions">
                     <div class="actions">
                         <img class="profile-pic" src="img/avatar_1.jpg" alt="">
                         <div>
-                            <p class="username">Michele</p>
-                            <p class="last-access">Ultimo accesso oggi alle 12:00</p>
+                            <p class="username">{{contacts[currentIndex].name}}</p>
+                            <p class="last-access">Ultimo accesso oggi alle</p>
                         </div>
                     </div>
                     <div>
@@ -72,17 +73,17 @@
                 </div>
                 <!-- Sezione visualizzazione dei messaggi -->
                 <div class="chat-display">
-                    <div class="chat" 
-                    v-for="message in contacts[currentIndex].messages">
+                    <div class="chat" v-for="message in contacts[currentIndex].messages">
                         <div class="float-right" v-if='message.status === "sent"'>
                             <div class="message sent">
-                                <p>Hai portato a spasso il cane?</p>
-                                <p>Ricordati di stendere i panni</p>
+                                <p>{{message.text}}</p>
+                                <p>{{message.date}}</p>
                             </div>
                         </div>
                         <div class="float-left" v-else>
                             <div class="message received">
-                                <p>Tutto fatto!</p>
+                                <p>{{message.text}}</p>
+                                <p>{{message.date}}</p>
                             </div>
                         </div>
                     </div>
@@ -90,7 +91,7 @@
                 <!-- Sezione input nuovo messaggio -->
                 <div class="new-message">
                     <i class="far fa-smile"></i>
-                    <input v-model="newMessage" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessage" @keyup.enter="sendMessage(contacts[currentIndex])" placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
@@ -98,3 +99,4 @@
     </div>
     <script src="js/main.js"></script>
 </body>
+</html>
