@@ -7,7 +7,7 @@
 }
 .chat-display {
     height: calc(100% - 120px);
-    background: url(img/mine.jpg);
+    background: url(../img/mine.jpg);
     background-size: contain;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 }
 
 .sent {
-    background-color: green;
+    background-color: #d3f9ba;
 }
 
 .received {

@@ -16,9 +16,11 @@
     background-color: #fff;
 }
 
-.notifications i {
-    color: cyan;
-    cursor: pointer;
+.fa-bell-slash{
+    color: #8edafc;
+    background: white;
+    font-size: 25px;
+    padding: 10px;
 }
 
 .active-notifications {
