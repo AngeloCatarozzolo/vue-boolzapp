@@ -169,6 +169,9 @@ new Vue({
         ],
     },
     methods: {
+        
+
+
         getImageUrl(contact) {
             return 'img/avatar' + contact.avatar + '.jpg';
         },

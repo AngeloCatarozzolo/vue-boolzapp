@@ -62,7 +62,7 @@
                         <img class="profile-pic" src="img/avatar_1.jpg" alt="">
                         <div>
                             <p class="username">{{contacts[currentIndex].name}}</p>
-                            <p class="last-access">Ultimo accesso oggi alle</p>
+                            <p class="last-access">Ultimo accesso oggi alle 12.00</p>
                         </div>
                     </div>
                     <div>
@@ -76,13 +76,13 @@
                     <div class="chat" v-for="message in contacts[currentIndex].messages">
                         <div class="float-right" v-if='message.status === "sent"'>
                             <div class="message sent">
-                                <p>{{message.text}}</p>
+                                <p>{{message.message}}</p>
                                 <p>{{message.date}}</p>
                             </div>
                         </div>
                         <div class="float-left" v-else>
                             <div class="message received">
-                                <p>{{message.text}}</p>
+                                <p>{{message.message}}</p>
                                 <p>{{message.date}}</p>
                             </div>
                         </div>
