@@ -1,7 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-        newMessage: '',
+        newMessage: "",
         researchContact: '',
         currentIndex: 0,
         contacts: [
@@ -181,10 +181,10 @@ new Vue({
         sendMessage(contact) {
             contact.messages.push({
                 date: this.getCurrentDate(),
-                text: this.newMessage,
+                message: this.newMessage,
                 status: 'sent'
             })
-            this.newMessage = '';
+            this.newMessage =  "";
             setTimeout(() => {
                 this.autoReply(contact)
             }, 1000)
@@ -192,7 +192,7 @@ new Vue({
         autoReply(contact) {
             contact.messages.push({
                 date: this.getCurrentDate(),
-                text: 'Ok',
+                message: 'Ok',
                 status: 'received',
             })
         },

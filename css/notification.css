@@ -1,5 +1,5 @@
 .notifications {
-    background-color: cyan;
+    background-color: #8edafc;
     padding: 15px 10px;
     display: flex;
     justify-content: space-around;
@@ -17,8 +17,6 @@
 }
 
 .fa-bell-slash{
-    color: #8edafc;
-    background: white;
     font-size: 25px;
     padding: 10px;
 }
